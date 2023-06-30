@@ -20,3 +20,9 @@
         height: 220px;
     }
 }
+@media screen and (max-width: 350px) {
+    .slider__container .mySwiper {
+        height: 220px;
+        width: auto;
+    }
+}

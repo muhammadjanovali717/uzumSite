@@ -1,17 +1,21 @@
-import React from 'react'
-import "./Navbar.css"
-import NavbarTop from './NavbarTop'
-import NavbarBottom from './NavbarBottom'
-import NavbarMain from './NavbarMain'
+import React from "react";
+import "./Navbar.css";
+import NavbarTop from "./NavbarTop";
+import NavbarMain from "./NavbarMain";
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
-    return (
-        <div>
-            <NavbarTop />
-            <NavbarMain />
-            <NavbarBottom />
-        </div>
-    )
+  const { pathname } = useLocation();
+
+  if (pathname.includes("/admin")) {
+    return <></>;
+  }
+  return (
+    <div>
+      <NavbarTop />
+      <NavbarMain />
+    </div>
+  );
 }
 
-export default Navbar
+export default Navbar;

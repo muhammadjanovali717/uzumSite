@@ -4,32 +4,34 @@ import {
   AiFillStar,
   AiOutlineHeart,
   AiOutlineShoppingCart,
-  AiFillHeart
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToHeart, removeFromHeart } from "../../context/heart";
-import { useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../../context/cart";
+
 function ProductWrapper({data}) {
   const dispatch = useDispatch();
-  const heart = useSelector(s => s.heart.value)
   return (
     <div className="products">
       {data?.map((item) => (
         <div key={item.id} className="card">
+          <font>Скидка</font>
           <Link to={`/product/${item.id}`} state={item} className="card__image">
             <img src={item.url} alt="" />
           </Link>
           <button className="card__heart">
-          {
-            heart.some(i => i.id === item.id) ?
-            <AiFillHeart onClick={()=> dispatch(removeFromHeart(item))} /> :
-            <AiOutlineHeart onClick={()=> dispatch(addToHeart(item))} />
-          }
+            <AiOutlineShoppingCart onClick={() => dispatch(addToCart(item))} /> <br />
+            <AiOutlineHeart onClick={() => dispatch(addToHeart(item))} />
           </button>
+          
           <div className="card__body">
             <p className="card__title">{item.title}</p>
             <p className="card__rating">
+              <AiFillStar />
+              <AiFillStar />
+              <AiFillStar />
+              <AiFillStar />
               <AiFillStar />
               <span>5.0 (585 baho)</span>
             </p>
@@ -38,13 +40,13 @@ function ProductWrapper({data}) {
             </div>
             <div className="card__price">
               <div>
-                <del>{Math.round(item.price * 1.5)} so'm</del>
                 <p>{item.price} so'm</p>
+                <del>{Math.round(item.price * 1.5)} so'm</del>
               </div>
-              <button className="price__cart">
-                <AiOutlineShoppingCart />
-              </button>
             </div>
+                <div className="card__btn">
+                  <button>Рассрочка</button>
+                </div>
           </div>
         </div>
       ))}

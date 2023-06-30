@@ -1,0 +1,14 @@
+.createProduct input{
+    padding: 5px 10px;
+    font-size: 18px;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+.createProduct h2{
+    text-align: center;
+}
+.createProduct button{
+    padding: 5px 6px;
+    margin-left: 45%;
+    margin-top: 5%;
+}

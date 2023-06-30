@@ -6,8 +6,8 @@ import ProductWrapper from "../product-wrapper/ProductWrapper";
 
 function Products() {
   return (
-    <div className="container"> 
-      {/* <h2>Products</h2> */}
+    <div className="container">
+      <h2>Products</h2>
       <ProductWrapper data={PRODUCTS}/>
       <Skeleton />
     </div>

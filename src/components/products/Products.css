@@ -15,15 +15,34 @@
 
 .card__image {
     height: 300px;
-    border-radius: 8px;
-    overflow: hidden;
 }
 
 .card__image img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: .3s;
+}
+.card font {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    background:red;
+    font-size: 17px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-right: 50%;
+    color: white;
+}
+.card__btn button{
+    padding: 5px 14px;
+    color: white;
+    font-size: 18px;
+    border: none;
+    margin-top: 5%;
+    margin-right: 50%;
+    background-color: blue;
+    border-radius: 10px;
 }
 
 .card:hover .card__image img {
@@ -110,7 +129,7 @@
 @media screen and (max-width: 600px) {
     .products {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 2fr);
     }
 
     .card {
@@ -119,5 +138,18 @@
 
     .card__image {
         height: 250px;
+    }
+}
+@media screen and (max-width: 365px) {
+    .products {
+        display: grid;
+        grid-template-columns: repeat(1, 2fr);
+        border-radius: none;
+        width: 100%;
+        object-fit: cover;
+        overflow: none;
+    }
+    .card img{
+        width: 90%;
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import Empty from "../../components/empty/Empty"
 import { useSelector } from 'react-redux'
-import ProductWrapper from '../../components/product-wrapper/ProductWrapper';
+import WishlistWrapper from '../../components/wishlist-wrapper/WishlistWrapper';
 
 function Wishlist() {
     const heart = useSelector(s => s.heart.value)
@@ -9,12 +9,12 @@ function Wishlist() {
     return (
         <div className='container'>
             {
-            heart.length ?  
-            <ProductWrapper data={heart}/>
-             :
-            <Empty title="Sevimlilar" />
+                heart.length ?
+                <WishlistWrapper data={heart}/>:
+                <Empty title="Sevimlilar" />
+     
             }
-        </div>
+               </div>
     )
 }
 
